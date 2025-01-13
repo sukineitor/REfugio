@@ -3,187 +3,349 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recreo campestre el refugio - Huancabamba, Piura</title>
+    <title>Recreo Campestre El Refugio - Huancabamba, Piura</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 <body>
-    <header class="hero">
-        <nav class="navbar">
-            <div class="logo">El Refugio</div>
-            <ul class="nav-links">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#nosotros">Nosotros</a></li>
-                <li><a href="#galeria">Galería</a></li>
-                <li><a href="#menu">Menú</a></li>
-                <li><a href="#ubicacion">Ubicación</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-            <div class="burger">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">El Refugio</a>
+            <div class="nav-links">
+                <a href="#inicio" class="nav-link">Inicio</a>
+                <a href="#nosotros" class="nav-link">Nosotros</a>
+                <a href="#menu" class="nav-link">Menú</a>
+                <a href="#galeria" class="nav-link">Galería</a>
+                <a href="#ubicacion" class="nav-link">Ubicación</a>
+                <a href="#contacto" class="nav-link">Contacto</a>
             </div>
-        </nav>
+            <button class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <header id="inicio" class="hero">
         <div class="hero-content">
-            <h1 class="">Recreo campestre el refugio</h1>
-            <p class="animate-pop-in">La mejor experiencia culinaria en Huancabamba</p>
-            <a href="#menu" class="cta-button animate-pop-in">Ver Menú</a>
+            <h1 class="reveal-text">Recreo Campestre El Refugio</h1>
+            <p class="fade-in">La mejor experiencia culinaria en Huancabamba</p>
+            <a href="#menu" class="cta-button slide-up">Ver Menú</a>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <div class="arrow"></div>
         </div>
     </header>
 
     <main>
-        <section id="nosotros" class="nosotros">
-            <h2 class="section-title">Sobre Nosotros</h2>
-            <div class="nosotros-content animate-fade-in">
-                <div class="nosotros-text">
-                    <p>Bienvenidos al Recreo campestre el refugio, un oasis de sabor y tradición en el corazón de Huancabamba. Desde 11 julio 2008, nos hemos dedicado a ofrecer la mejor comida criolla y marina, combinando los sabores auténticos de nuestra región con un ambiente acogedor y familiar.</p>
-                    <p>Nuestro compromiso es brindar a nuestros visitantes una experiencia gastronómica inolvidable, rodeados de la belleza natural. Ven y descubre por qué somos el destino favorito de locales y turistas.</p>
-                </div>
-                <div class="nosotros-image">
-                    <img src="placeholder-nosotros.jpg" alt="Interior del Recreo campestre el refugio" class="animate-image">
-                </div>
-            </div>
-        </section>
-
-        <section id="galeria" class="galeria">
-            <h2 class="section-title">Nuestra Galería</h2>
-            <div class="galeria-container">
-                <div class="galeria-item animate-fade-in">
-                    <img src="placeholder-galeria-1.jpg" alt="Plato destacado " class="animate-image">
-                    <div class="galeria-overlay">
-                        <h3>Plato Destacado</h3>
-                        <p>Deliciosa fusión de sabores locales</p>
+        <section id="nosotros" class="section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Nuestra Historia</h2>
+                <div class="nosotros-grid">
+                    <div class="nosotros-content" data-aos="fade-right">
+                        <p>Bienvenidos al Recreo Campestre El Refugio, un oasis de sabor y tradición en el corazón de Huancabamba. Desde el 11 de julio de 2008, nos hemos dedicado a ofrecer la mejor comida criolla y marina, combinando los sabores auténticos de nuestra región con un ambiente acogedor y familiar.</p>
+                        <p>Nuestro compromiso es brindar a nuestros visitantes una experiencia gastronómica inolvidable, rodeados de la belleza natural de Huancabamba.</p>
                     </div>
-                </div>
-                <div class="galeria-item animate-fade-in">
-                    <img src="placeholder-galeria-2.jpg" alt="Área exterior " class="animate-image">
-                    <div class="galeria-overlay">
-                        <h3>Nuestro Ambiente</h3>
-                        <p>Un espacio acogedor rodeado de naturaleza</p>
-                    </div>
-                </div>
-                <div class="galeria-item animate-fade-in">
-                    <img src="placeholder-galeria-3.jpg" alt="Eventos" class="animate-image">
-                    <div class="galeria-overlay">
-                        <h3>Eventos Especiales</h3>
-                        <p>El lugar perfecto para tus celebraciones</p>
-                    </div>
-                </div>
-                <div class="galeria-item animate-fade-in">
-                    <img src="placeholder-galeria-4.jpg" alt="Plato típico de Huancabamba" class="animate-image">
-                    <div class="galeria-overlay">
-                        <h3>Sabores Locales</h3>
-                        <p>Descubre la auténtica cocina de Huancabamba</p>
+                    <div class="nosotros-image" data-aos="fade-left">
+                        <img src="https://via.placeholder.com/600x400" alt="Interior del Recreo Campestre El Refugio">
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="menu" class="menu">
-            <h2 class="section-title">Nuestro Menú</h2>
-            <div class="menu-container">
-                <div class="menu-column animate-fade-in">
-                    <h3>Platos Principales</h3>
-                    <ul>
-                        <li>Ceviche Mixto</li>
-                        <li>Ceviche de Caballa</li>
-                        <li>Ceviche Filete</li>
-                        <li>Leche de Tigre</li>
-                        <li>Chicharrón de Pollo</li>
-                        <li>Chicharrón de Pescado</li>
-                        <li>Chicharrón Mixto (Pescado Y Mariscos)</li>
-                        <li>Chicharrón Mixto (Pescado Y Pollo)</li>
-                        <li>Sudado de Cabrilla</li>
-                        <li>Parihuela</li>
-                        <li>Arroz con Mariscos</li>
-                        <li>Ronda Marina (Ceviche, Arroz con Mariscos, Chicharrón)</li>
-                        <li>Combo (Arroz con Mariscos + Chicharrón)</li>
-                        <li>Combo (Ceviche + Chicharrón)</li>
-                        <li>Jalea Mixta</li>
-                        <li>Cuy con Papa</li>
-                        <li>Gallina Criolla</li>
-                    </ul>
-                </div>
-                <div class="menu-column animate-fade-in">
-                    <h3>Bebidas</h3>
-                    <ul>
-                        <li>Inca Kola (1/2L, 1L, 1.5L, 2L)</li>
-                        <li>Coca-Cola (1/2L, 1L, 1.5L, 2L)</li>
-                        <li>Ron</li>
-                        <li>Vino</li>
-                        <li>Pisco</li>
-                        <li>Cerveza Cristal</li>
-                        <li>Cerveza Pilsen</li>
-                        <li>Cusqueña Negra</li>
-                        <li>Cusqueña de Trigo</li>
-                        <li>Corona</li>
-                        <li>Cañazo/Aguardiente</li>
-                        <li>Agua mineral</li>
-                        <li>Sporade</li>
-                        
-                    </ul>
-                </div>
-                <div class="menu-column animate-fade-in">
-                    <h3>Cocteles</h3>
-                    <ul>
-                        <li>Coctel de Maracuyá</li>
-                        <li>Coctel de Limón</li>
-                        <li>Coctel de Café</li>
-                        <li>Coctel de Algarrobina</li>
-                        <li>Rompope</li>
-                    </ul>
+        <section id="menu" class="section menu-section">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Nuestro Menú</h2>
+        <div class="menu-grid">
+            <div class="menu-category" data-aos="fade-up" data-aos-delay="100">
+                <h3>Platos Principales</h3>
+                <ul class="menu-list">
+                    <li>
+                        <span class="dish-name">Ceviche Mixto</span>
+                        <span class="dish-price">S/. 35.00</span>
+                    </li>
+                    <li>
+                        <span class="dish-name">Ceviche de Caballa</span>
+                        <span class="dish-price">S/. 25.00</span>
+                    </li>
+                    <li>
+                        <span class="dish-name">Ceviche Filete</span>
+                        <span class="dish-price">S/. 40.00</span>
+                    </li>
+                    <li>
+                        <span class="dish-name">Leche de Tigre</span>
+                        <span class="dish-price">S/. 10.00</span>
+                    </li>
+                    <li>
+                        <span class="dish-name">Chicharrón de Pollo</span>
+                        <span class="dish-price">S/. 35.00</span>
+                    </li>
+                    <li>
+                        <span class="dish-name">Chicharrón de Pescado</span>
+                        <span class="dish-price">S/. 45.00</span>
+                    </li>
+                    <li>
+                        <span class="dish-name">Chicharrón Mixto (Pescado y Mariscos)</span>
+                        <span class="dish-price">S/. 45.00</span>
+                    </li>
+                    <li>
+                        <span class="dish-name">Chicharrón Mixto (Pescado y Pollo)</span>
+                        <span class="dish-price">S/. 40.00</span>
+                    </li>
+                    <li>
+                        <span class="dish-name">Sudado de Cabrilla</span>
+                        <span class="dish-price">S/. 40.00</span>
+                    </li>
+                    <li>
+                        <span class="dish-name">Parihuela</span>
+                        <span class="dish-price">S/. 50.00</span>
+                    </li>
+                    <li>
+                        <span class="dish-name">Arroz con Mariscos</span>
+                        <span class="dish-price">S/. 35.00</span>
+                    </li>
+                    <li>
+                        <span class="dish-name">Ronda Marina</span>
+                        <span class="dish-price">S/. 60.00</span>
+                    </li>
+                    <li>
+                        <span class="dish-name">Combo (Arroz con Mariscos + Chicharrón)</span>
+                        <span class="dish-price">S/. 50.00</span>
+                    </li>
+                    <li>
+                        <span class="dish-name">Combo (Ceviche + Chicharrón)</span>
+                        <span class="dish-price">S/. 50.00</span>
+                    </li>
+                    <li>
+                        <span class="dish-name">Jalea Mixta</span>
+                        <span class="dish-price">S/. 50.00</span>
+                    </li>
+                    <li>
+                        <span class="dish-name">Cuy con Papa</span>
+                        <span class="dish-price">S/. 70.00</span>
+                    </li>
+                    <li>
+                        <span class="dish-name">Gallina Criolla</span>
+                        <span class="dish-price">S/. 150.00</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="menu-category" data-aos="fade-up" data-aos-delay="200">
+                <h3>Bebidas</h3>
+                <ul class="menu-list">
+                    <li>
+                        <span class="dish-name">Inca Kola 1/2L</span>
+                        <span class="dish-price">S/. 3.00</span>
+                    </li>
+                    <li>
+                        <span class="dish-name">Inca Kola 1L</span>
+                        <span class="dish-price">S/. 6.00</span>
+                    </li>
+                    <li>
+                        <span class="dish-name">Inca Kola 1.5L</span>
+                        <span class="dish-price">S/. 8.00</span>
+                    </li>
+                    <li>
+                        <span class="dish-name">Inca Kola 2L</span>
+                        <span class="dish-price">S/. 12.00</span>
+                    </li>
+                    <li>
+                        <span class="dish-name">Coca-Cola 1/2L</span>
+                        <span class="dish-price">S/. 3.00</span>
+                    </li>
+                    <li>
+                        <span class="dish-name">Coca-Cola 1L</span>
+                        <span class="dish-price">S/. 6.00</span>
+                    </li>
+                    <li>
+                        <span class="dish-name">Coca-Cola 1.5L</span>
+                        <span class="dish-price">S/. 8.00</span>
+                    </li>
+                    <li>
+                        <span class="dish-name">Coca-Cola 2L</span>
+                        <span class="dish-price">S/. 12.00</span>
+                    </li>
+                    <li>
+                        <span class="dish-name">Ron</span>
+                        <span class="dish-price">S/. 40.00</span>
+                    </li>
+                    <li>
+                        <span class="dish-name">Vino</span>
+                        <span class="dish-price">S/. 30.00</span>
+                    </li>
+                    <li>
+                        <span class="dish-name">Pisco</span>
+                        <span class="dish-price">S/. 40.00</span>
+                    </li>
+                    <li>
+                        <span class="dish-name">Cerveza Cristal</span>
+                        <span class="dish-price">S/. 8.00</span>
+                    </li>
+                    <li>
+                        <span class="dish-name">Cerveza Pilsen</span>
+                        <span class="dish-price">S/. 8.50</span>
+                    </li>
+                    <li>
+                        <span class="dish-name">Cusqueña Negra</span>
+                        <span class="dish-price">S/. 9.00</span>
+                    </li>
+                    <li>
+                        <span class="dish-name">Cusqueña de Trigo</span>
+                        <span class="dish-price">S/. 9.00</span>
+                    </li>
+                    <li>
+                        <span class="dish-name">Corona</span>
+                        <span class="dish-price">S/. 7.00</span>
+                    </li>
+                    <li>
+                        <span class="dish-name">Cañazo/Aguardiente</span>
+                        <span class="dish-price">S/. 10.00</span>
+                    </li>
+                    <li>
+                        <span class="dish-name">Agua mineral</span>
+                        <span class="dish-price">S/. 2.00</span>
+                    </li>
+                    <li>
+                        <span class="dish-name">Sporade</span>
+                        <span class="dish-price">S/. 3.00</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="menu-category" data-aos="fade-up" data-aos-delay="300">
+                <h3>Cocteles</h3>
+                <ul class="menu-list">
+                    <li>
+                        <span class="dish-name">Coctel de Maracuyá</span>
+                        <span class="dish-price">S/. 3.00</span>
+                    </li>
+                    <li>
+                        <span class="dish-name">Coctel de Limón</span>
+                        <span class="dish-price">S/. 3.00</span>
+                    </li>
+                    <li>
+                        <span class="dish-name">Coctel de Café</span>
+                        <span class="dish-price">S/. 3.00</span>
+                    </li>
+                    <li>
+                        <span class="dish-name">Coctel de Algarrobina</span>
+                        <span class="dish-price">S/. 3.00</span>
+                    </li>
+                    <li>
+                        <span class="dish-name">Rompope</span>
+                        <span class="dish-price">S/. 3.00</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <section id="galeria" class="section gallery-section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Nuestra Galería</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item" data-aos="zoom-in">
+                        <img src="https://via.placeholder.com/400x300" alt="Plato 1">
+                        <div class="gallery-overlay">
+                            <h3>Ceviche Mixto</h3>
+                            <p>Nuestro plato estrella</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+                        <img src="https://via.placeholder.com/400x300" alt="Plato 2">
+                        <div class="gallery-overlay">
+                            <h3>Ambiente</h3>
+                            <p>Espacios acogedores</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
+                        <img src="https://via.placeholder.com/400x300" alt="Plato 3">
+                        <div class="gallery-overlay">
+                            <h3>Chicharrón</h3>
+                            <p>Crujiente y delicioso</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="ubicacion" class="ubicacion">
-            <h2 class="section-title">Nuestra Ubicación</h2>
-            <div class="ubicacion-content animate-fade-in">
-                <div class="mapa">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3973.169179089656!2d-79.4577768254813!3d-5.236102352698908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x904ab51b044663e5%3A0x8363dd425a8af4b!2sBar%20Recreo%20Campestre%20El%20Refugio!5e0!3m2!1ses-419!2spe!4v1736802098751!5m2!1ses-419!2spe" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-                <div class="direccion">
-                    <h3>Cómo llegar</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> La Perla, Huancabamba, Piura, Perú</p>
-                    <p><i class="fas fa-directions"></i> Desde el centro de Huancabamba:</p>
-                    <ol>
-                        <li>Toma la carretera principal hacia La Perla</li>
-                        <li>Después de 3 km, gira a la derecha en el camino de tierra</li>
-                        <li>Sigue el camino por 500 metros</li>
-                        <li>Verás nuestro letrero a la izquierda</li>
-                    </ol>
-                    <a href="https://maps.app.goo.gl/UvhdviNiPwBMh2fU7" target="_blank" class="direcciones-btn">Ver en Google Maps</a>
+        <section id="ubicacion" class="section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Ubicación</h2>
+                <div class="ubicacion-grid">
+                    <div class="map-container" data-aos="fade-right">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3973.169179089656!2d-79.4577768254813!3d-5.236102352698908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x904ab51b044663e5%3A0x8363dd425a8af4b!2sBar%20Recreo%20Campestre%20El%20Refugio!5e0!3m2!1ses-419!2spe!4v1736802098751!5m2!1ses-419!2spe" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div class="location-info" data-aos="fade-left">
+                        <h3>Cómo llegar</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> La Perla, Huancabamba, Piura, Perú</p>
+                        <div class="directions">
+                            <h4>Desde el centro de Huancabamba:</h4>
+                            <ol>
+                                <li>Toma la carretera principal hacia La Perla</li>
+                                <li>Después de 3 km, gira a la derecha</li>
+                                <li>Sigue el camino por 500 metros</li>
+                                <li>Encontrarás nuestro local a la izquierda</li>
+                            </ol>
+                        </div>
+                        <a href="https://maps.app.goo.gl/UvhdviNiPwBMh2fU7" target="_blank" class="map-button">
+                            Abrir en Google Maps
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="contacto" class="contacto">
-            <h2 class="section-title">Contáctanos</h2>
-            <div class="contacto-content animate-fade-in">
-                <form class="contacto-form">
-                    <input type="text" placeholder="Nombre" required>
-                    <input type="email" placeholder="Correo electrónico" required>
-                    <textarea placeholder="Mensaje" required></textarea>
-                    <button type="submit">Enviar</button>
-                </form>
-                <div class="contacto-info">
-                    <p><i class="fas fa-phone"></i> Teléfono: 974147473</p>
-                    <p><i class="fas fa-clock"></i> Horario: 9:00 AM - 10:00 PM</p>
-                    
-                    <div class="redes-sociales">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+        <section id="contacto" class="section contact-section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Contáctanos</h2>
+                <div class="contact-grid">
+                    <form class="contact-form" data-aos="fade-right">
+                        <div class="form-group">
+                            <input type="text" placeholder="Nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Correo electrónico" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Mensaje" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">Enviar Mensaje</button>
+                    </form>
+                    <div class="contact-info" data-aos="fade-left">
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <p>974 147 473</p>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <p>9:00 AM - 10:00 PM</p>
+                        </div>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2024 Recreo campestre el refugio. Todos los derechos reservados.</p>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">El Refugio</div>
+                <p>&copy; 2024 Recreo Campestre El Refugio. Todos los derechos reservados.</p>
+            </div>
+        </div>
     </footer>
 
     <script src="script.js"></script>

@@ -1,66 +1,55 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Navegación responsive
-    const burger = document.querySelector('.burger');
-    const nav = document.querySelector('.nav-links');
-    const navLinks = document.querySelectorAll('.nav-links li');
-
-    burger.addEventListener('click', () => {
-        // Toggle nav
-        nav.classList.toggle('active');
-
-        // Animate links
-        navLinks.forEach((link, index) => {
-            if (link.style.animation) {
-                link.style.animation = '';
-            } else {
-                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
-            }
-        });
-
-        // Burger animation
-        burger.classList.toggle('toggle');
+    // Inicializar AOS (Animate On Scroll)
+    AOS.init({
+        duration: 800,
+        offset: 100,
+        once: true
     });
 
-    // Desplazamiento suave para los enlaces de navegación
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
+    // Navbar scroll effect
+    const navbar = document.querySelector('.navbar');
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
 
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // Mobile menu toggle
+    menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            menuToggle.classList.remove('active');
+            navLinks.classList.remove('active');
+        });
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            const navHeight = navbar.offsetHeight;
+            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+            
+            window.scrollTo({
+                top: targetPosition - navHeight,
                 behavior: 'smooth'
             });
         });
     });
 
-    // Animación de elementos al hacer scroll
-    const animateOnScroll = () => {
-        const elements = document.querySelectorAll('.animate-fade-in');
-        elements.forEach(element => {
-            const elementTop = element.getBoundingClientRect().top;
-            const elementBottom = element.getBoundingClientRect().bottom;
-
-            if (elementTop < window.innerHeight && elementBottom > 0) {
-                element.style.opacity = '1';
-                element.style.transform = 'translateY(0)';
-            }
-        });
-    };
-
-    window.addEventListener('scroll', animateOnScroll);
-    animateOnScroll(); // Llamar una vez al cargar la página
-
-    // Cambiar el fondo de la barra de navegación al hacer scroll
-    const navbar = document.querySelector('.navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
-            navbar.style.background = 'rgba(0, 0, 0, 0.8)';
-        } else {
-            navbar.style.background = 'rgba(0, 0, 0, 0.5)';
-        }
-    });
-
-    // Manejar el envío del formulario de contacto
-    const contactForm = document.querySelector('.contacto-form');
+    // Form submission handler
+    const contactForm = document.querySelector('.contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
@@ -69,46 +58,42 @@ document.addEventListener('DOMContentLoaded', function() {
             contactForm.reset();
         });
     }
-});
 
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+    // Parallax effect for hero section
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const hero = document.querySelector('.hero');
+        hero.style.backgroundPositionY = -(scrolled * 0.5) + 'px';
+    });
+
+    // Reveal animations for sections
+    const revealSection = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                observer.unobserve(entry.target);
+            }
+        });
+    };
+
+    const sectionObserver = new IntersectionObserver(revealSection, {
+        root: null,
+        threshold: 0.15
+    });
+
+    document.querySelectorAll('.section').forEach(section => {
+        sectionObserver.observe(section);
+    });
+
+    // Gallery image hover effect
+    document.querySelectorAll('.gallery-item').forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            this.querySelector('.gallery-overlay').style.opacity = '1';
+        });
+
+        item.addEventListener('mouseleave', function() {
+            this.querySelector('.gallery-overlay').style.opacity = '0';
         });
     });
 });
-
-// Parallax effect for sections with background images
-window.addEventListener('scroll', function() {
-    const parallaxSections = document.querySelectorAll('.nosotros, .galeria, .menu');
-    parallaxSections.forEach(section => {
-        const distance = window.pageYOffset;
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-        if (distance > sectionTop - window.innerHeight && distance < sectionTop + sectionHeight) {
-            const background = section.querySelector(':before');
-            const yPos = -(distance - sectionTop) / 5;
-            background.style.transform = `translateY(${yPos}px)`;
-        }
-    });
-});
-
-// Animate elements on scroll
-function animateOnScroll() {
-    const elements = document.querySelectorAll('.animate-fade-in');
-    elements.forEach(element => {
-        const elementTop = element.getBoundingClientRect().top;
-        const elementBottom = element.getBoundingClientRect().bottom;
-        if (elementTop < window.innerHeight && elementBottom > 0) {
-            element.style.opacity = '1';
-            element.style.transform = 'translateY(0)';
-        }
-    });
-}
-
-window.addEventListener('scroll', animateOnScroll);
-animateOnScroll(); // Call once on load
 
