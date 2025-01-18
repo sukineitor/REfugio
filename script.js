@@ -95,5 +95,65 @@ document.addEventListener('DOMContentLoaded', function() {
             this.querySelector('.gallery-overlay').style.opacity = '0';
         });
     });
+
+    // Modal functionality
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const modals = document.querySelectorAll('.modal');
+    const closeButtons = document.querySelectorAll('.close');
+    const modalImages = document.querySelectorAll('.modal-img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const closeLightbox = document.querySelector('.close-lightbox');
+
+    galleryItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const modalId = this.getAttribute('data-modal-trigger');
+            const modal = document.getElementById(modalId);
+            openModal(modal);
+        });
+    });
+
+    closeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const modal = this.closest('.modal');
+            closeModal(modal);
+        });
+    });
+
+    window.addEventListener('click', function(event) {
+        modals.forEach(modal => {
+            if (event.target == modal) {
+                closeModal(modal);
+            }
+        });
+        if (event.target == lightbox) {
+            closeLightboxFunction();
+        }
+    });
+
+    modalImages.forEach(img => {
+        img.addEventListener('click', function() {
+            lightboxImg.src = this.src;
+            lightboxCaption.innerHTML = this.alt;
+            lightbox.style.display = "block";
+        });
+    });
+
+    closeLightbox.addEventListener('click', closeLightboxFunction);
+
+    function openModal(modal) {
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+        modal.classList.add('show');
+    }
+
+    function closeModal(modal) {
+        document.body.style.overflow = ''; // Re-enable scrolling
+        modal.classList.remove('show');
+    }
+
+    function closeLightboxFunction() {
+        lightbox.style.display = "none";
+    }
 });
 
